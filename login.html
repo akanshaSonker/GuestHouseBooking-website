@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - ONGC</title>
+    <style>
+        body, html {
+            height: 100%;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: url('https://assets.telegraphindia.com/telegraph/ba2f7a0d-c9bd-41e5-82fd-34655c322a0b.jpg') no-repeat center center fixed;
+            background-size: cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .login-container {
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+            width: 350px;
+            text-align: center;
+        }
+
+        .login-container img {
+            width: 70px;
+            margin-bottom: 20px;
+        }
+
+        .login-container h2 {
+            margin-bottom: 20px;
+        }
+
+        .login-container input[type="text"],
+        .login-container input[type="password"] {
+            width: 100%;
+            padding: 15px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        .login-container button {
+            background-color: #1e90ff;
+            color: white;
+            padding: 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+            margin-top: 20px;
+            font-size: 16px;
+        }
+
+        .login-container button:hover {
+            background-color: #1c86ee;
+        }
+
+        .login-container a {
+            display: block;
+            margin-top: 15px;
+            color: #1e90ff;
+            text-decoration: none;
+        }
+
+        .login-container a:hover {
+            text-decoration: underline;
+        }
+
+        .back-button {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            padding: 10px;
+            border-radius: 50%;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .back-button:hover {
+            background-color: rgba(0, 0, 0, 0.7);
+        }
+    </style>
+     <script>
+        function handleLogin(event) {
+            event.preventDefault(); // Prevents the default form submission
+            const cpf = document.getElementById('cpf').value;
+            const password = document.getElementById('password').value;
+
+            // You can add validation or authentication logic here
+            // For now, we simply redirect to feedback.html
+
+            if (cpf && password) { // Simple check to see if values are entered
+                window.location.href = 'feedback.html';
+            } else {
+                alert('Please enter both CPF and password.');
+            }
+        }
+    </script>
+</head>
+<body>
+    <a href="index.html" class="back-button" aria-label="Go back">&#8592;</a>
+    <div class="login-container">
+        <img src="https://ongcindia.com/documents/77751/1767704/2203_logopng.png/9c8ae834-3067-b310-e32f-6dd0703b8720" alt="ONGC Logo">
+
+        <h2>Login</h2>
+        <!-- <form>
+            <label for="cpf">CPF Number</label>
+            <input type="text" id="cpf" name="cpf" placeholder="CPF Number" required>
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" placeholder="Password" required>
+            <a href="#">Forgot Password?</a>
+            <button type="submit">Login</button>
+        </form> -->
+
+        <form onsubmit="handleLogin(event)">
+            <label for="cpf">CPF Number</label>
+            <input type="text" id="cpf" name="cpf" placeholder="CPF Number" required>
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" placeholder="Password" required>
+            <a href="#">Forgot Password?</a>
+            <button type="submit">Login</button>
+        </form>
+    </div>
+</body>
+</html>

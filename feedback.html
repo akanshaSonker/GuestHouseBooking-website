@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback</title>
+    <style>
+        body {
+            background-image: url("https://wallpapercave.com/wp/wp7902082.jpg");
+            background-size: cover;
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            width: 50%;
+            margin: 100px auto;
+            background: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+        }
+        .container select, .container textarea, .container button {
+            width: 100%;
+            margin-bottom: 10px;
+            padding: 10px;
+            border-radius: 5px;
+        }
+        .container button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        .container button:hover {
+            background-color: #45a049;
+        }
+        .back-button {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background-color: #ddd;
+            border: none;
+            border-radius: 50%;
+            padding: 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <button class="back-button" onclick="window.location.href='index.html'">&#x2190;</button>
+    <div class="container">
+        <h2>Feedback</h2>
+        <form id="feedbackForm" onsubmit="submitFeedback(event)">
+            <select id="city" required>
+                <option value="">Select City</option>
+                <option value="Ahmedabad">Ahmedabad</option>
+                <option value="Ankleshwar">Ankleshwar</option>
+                <option value="Cambay">Cambay</option>
+                <option value="Chennai">Chennai</option>
+                <option value="Dehradun">Dehradun</option>
+                <option value="Goa">Goa</option>
+                <option value="Guwahati">Guwahati</option>
+                <option value="Hazira">Hazira</option>
+                <option value="Jorhat">Jorhat</option>
+                <option value="Kakinada">Kakinada</option>
+                <option value="Karaikal">Karaikal</option>
+                <option value="Mehsana">Mehsana</option>
+                <option value="Mumbai">Mumbai</option>
+                <option value="Nazira">Nazira</option>
+                <option value="New Delhi">New Delhi</option>
+                <option value="Rajamundry">Rajamundry</option>
+                <option value="Sivasagar">Sivasagar</option>
+                <option value="Tripura">Tripura</option>
+                <option value="Uran">Uran</option>
+                <option value="Vadodara">Vadodara</option>
+            </select>
+            <select id="issue" required>
+                <option value="">Issue...</option>
+                <option value="Broken elevators or other maintenance issues">Broken elevators or other maintenance issues</option>
+                <option value="Lack of customer service">Lack of customer service</option>
+                <option value="In-room amenities not working">In-room amenities not working</option>
+                <option value="Trouble with the Wi-Fi">Trouble with the Wi-Fi</option>
+                <option value="Displeased with the food/food and beverage service">Displeased with the food/food and beverage service</option>
+                <option value="Unpleasant smell in mattresses">Unpleasant smell in mattresses</option>
+                <option value="Room service food not fresh">Room service food not fresh</option>
+                <option value="Others">Others</option>
+            </select>
+            <textarea id="feedback" rows="5" placeholder="Feedback..." required></textarea>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById('feedbackForm').addEventListener('submit', async function(event) {
+            event.preventDefault(); // Prevent the default form submission behavior
+    
+            // Gather form data
+            const city = document.getElementById('city').value;
+            const issue = document.getElementById('issue').value;
+            const feedback = document.getElementById('feedback').value;
+    
+            try {
+                const response = await fetch('http://localhost:3000/submit-feedback', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ city, issue, feedback }),
+                });
+    
+                if (response.ok) {
+                    alert('Feedback submitted successfully');
+                    window.location.href = 'submit.html'; // Redirect to submit.html
+                } else {
+                    alert('Error submitting feedback: ' + response.statusText);
+                }
+            } catch (error) {
+                console.error('Error submitting feedback:', error);
+                alert('An error occurred while submitting feedback.');
+            }
+        });
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ONGC GuestHouse Booking</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQMjKcOhwZygr9toUiTUZ0jXF8KpPzukaX7-A&s');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 40px;
+            border-radius: 10px;
+            width: 90%;
+            max-width: 900px;
+            margin: auto;
+            margin-top: 50px;
+            color: white;
+            text-align: center;
+        }
+        h1, h2 {
+            margin: 0 0 20px;
+        }
+        select, button {
+            width: 200px;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: none;
+            font-size: 16px;
+        }
+        button {
+            background-color: #004b79;
+            color: white;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: rgb(127, 203, 226);
+        }
+        .terms {
+            margin-top: 30px;
+            text-align: left;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #004b79;
+            color: white;
+        }
+        
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Welcome to ONGC GuestHouse Booking</h1>
+        <h2>Choose a City to proceed</h2>
+        <form id="bookingForm" action="/submit-booking" method="post">
+            <select name="city" id="city" required>
+                <option value="">Select City</option>
+                <!-- Add cities as needed -->
+                <option value="Ahmedabad">Ahmedabad</option>
+                <option value="Ankleshwar">Ankleshwar</option>
+                <option value="Cambay">Cambay</option>
+                <option value="Chennai">Chennai</option>
+                <option value="Dehradun">Dehradun</option>
+                <option value="Goa">Goa</option>
+                <option value="Guwahati">Guwahati</option>
+                <option value="Hazira">Hazira</option>
+                <option value="Jorhat">Jorhat</option>
+                <option value="Kakinada">Kakinada</option>
+                <option value="Karaikal">Karaikal</option>
+                <option value="Mehsana">Mehsana</option>
+                <option value="Mumbai">Mumbai</option>
+                <option value="Nazira">Nazira</option>
+                <option value="New Delhi">New Delhi</option>
+                <option value="Rajamundry">Rajamundry</option>
+                <option value="Sivasagar">Sivasagar</option>
+                <option value="Tripura">Tripura</option>
+                <option value="Uran">Uran</option>
+                <option value="Vadodara">Vadodara</option>
+            </select>
+            <button type="submit">Submit</button>
+        </form>
+    </form>
+    <div class="terms">
+        <h2>Terms and Conditions</h2>
+        <table>
+            <tr>
+                <th>Sl.No</th>
+                <th>Work Centers</th>
+                <th>No of Suites/VIP Rooms</th>
+                <th>VVIP Suite</th>
+                <th>No of Rooms</th>
+                <th>Allotment Criteria</th>
+                <th>Remarks</th>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>Jorhat</td>
+                <td>18</td>
+                <td>4</td>
+                <td>18</td>
+                <td>Suites are allotted with the approval of L-1 only. Rooms are allotted on First cum First serve basis. Preference is given to employees (Tour/Transfer etc.). Retired employees are also given preference.</td>
+                <td>For Marriage purpose, a maximum 3 Nos of rooms can be allotted at a time. For general purpose, a maximum 2 Nos of rooms are allotted at one instance.</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Cambay</td>
+                <td>3</td>
+                <td>5</td>
+                <td>5</td>
+                <td>Suites are allotted to E-7 and above. Rooms are allotted to all employees of E-6 and below (including staff).</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>PSHEM - GOA</td>
+                <td>5</td>
+                <td>50</td>
+                <td>50</td>
+                <td>Total 51 Rooms allotted (for trainees and faculty members and don't have any Guest House. Out of 50 one room is Suite room and other 2 rooms are meant as VVIP. Modular, and allotment of the rooms are done with the approval of ED-HOI only.</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>Mehsana</td>
+                <td>4</td>
+                <td>11</td>
+                <td>11</td>
+                <td>4 VIP Rooms and 11 normal Rooms.</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td>Vadodara</td>
+                <td>5</td>
+                <td>12</td>
+                <td>12</td>
+                <td>Normal AC Rooms: Allotments made for E-5 and below level employees. Allotment made on first come first serve basis. VIP Suite: Allotments made to E6 and E7 level. Allotments made on first come first serve basis. VVIP Suites: Allotments made to E8 and above. Allotments made only after approval of Basin Manager, WON Basin.</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>6</td>
+                <td>Kakinada</td>
+                <td>-</td>
+                <td>6</td>
+                <td>6</td>
+                <td>6 Rooms available. 4 Double Occupancy Rooms and 2 Single Occupancy Rooms.</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>7</td>
+                <td>Rajamundry</td>
+                <td>-</td>
+                <td>-</td>
+                <td>-</td>
+                <td>Since it's new Guest House, the modalities are yet to be fixed.</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>8</td>
+                <td>Ahmedabad</td>
+                <td>-</td>
+                <td>6</td>
+                <td>6</td>
+                <td>Tarapur Guest House, Ahmedabad. VIP Suite Rooms are allocated, preferably to the executives E7 and above level.</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>8a</td>
+                <td>Ahmedabad</td>
+                <td>-</td>
+                <td>8</td>
+                <td>8</td>
+                <td>Chhatral (OID) Guest House, Ahmedabad. VIP Suite Rooms are allocated, preferably to the executives E7 and above level.</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>9</td>
+                <td>Dehradun</td>
+                <td>-</td>
+                <td>4</td>
+                <td>4</td>
+                <td>Tel Bhavan Guest House</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>10</td>
+                <td>Dehradun</td>
+                <td>-</td>
+                <td>13</td>
+                <td>13</td>
+                <td>KDMIPE Guest House</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>11</td>
+                <td>Tripura</td>
+                <td>-</td>
+                <td>18</td>
+                <td>18</td>
+                <td>Standard Room - All ONGCians irrespective level/Company Guest. VIP Room for E6 to E8 & above /Company Guest. Room No 6 & above /Company Guest.</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>11-a</td>
+                <td>Assam (Nazira)</td>
+                <td>-</td>
+                <td>9</td>
+                <td>9</td>
+                <td>Standard Room - All ONGCians irrespective level/Company Guest. VIP Room for E6 to E8 & above /Company Guest. Room No 6 & above /Company Guest.</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>11-b</td>
+                <td>Assam (Sivasagar)</td>
+                <td>-</td>
+                <td>19</td>
+                <td>19</td>
+                <td>Standard Room - All ONGCians irrespective level/Company Guest. VIP Room for E6 to E8 & above /Company Guest. Room No 6 & above /Company Guest.</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>11-c</td>
+                <td>Assam (Guwahati)</td>
+                <td>-</td>
+                <td>19</td>
+                <td>19</td>
+                <td>Standard Room - All ONGCians irrespective level/Company Guest. VIP Room for E6 to E8 & above /Company Guest. Room No 6 & above /Company Guest.</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>12</td>
+                <td>Uran</td>
+                <td>Nil</td>
+                <td>Nil</td>
+                <td>Nil</td>
+                <td>Uran Plant does not have Guest House facility. There is an Employee Rest House (ERH) at Uran Plant which is used for accommodation of plant members who are required to stay for carrying out round the clock plant operations.</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>13</td>
+                <td>Hazira</td>
+                <td>10</td>
+                <td>3</td>
+                <td>5</td>
+                <td>Suite: For 8-8 & above. VIP Room: For E-5 & above. Semi VIP Room: 6 for E-8 & below. Normal Rooms: For E-8 & below.</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>14</td>
+                <td>Mumbai</td>
+                <td>15</td>
+                <td>7</td>
+                <td>22</td>
+                <td>15 AC Rooms. 7 Non AC Rooms, strictly for medical cases of retired and serving employees and their eligible dependents. During unavailability of hotel rooms for ON/OFF employees we also allot to them. Recommendations of I/C medical for allotment.</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>15</td>
+                <td>New Delhi-GK</td>
+                <td>-</td>
+                <td>-</td>
+                <td>11</td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>15-a</td>
+                <td>Chennai</td>
+                <td>-</td>
+                <td>-</td>
+                <td>11</td>
+                <td>- Allotment for VIP/Suite Room Consent from ED-BM (L1) is required. 2- Normal Room: dependent upon the availability rooms shall be allotted.</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>15-b</td>
+                <td>Friends GY</td>
+                <td>-</td>
+                <td>5</td>
+                <td>5</td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>15-c</td>
+                <td>Noida</td>
+                <td>-</td>
+                <td>-</td>
+                <td>11</td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>15-d</td>
+                <td>Hcl Road</td>
+                <td>-</td>
+                <td>-</td>
+                <td>4</td>
+                <td>One CMD Office</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>15-e</td>
+                <td>Bengal Mrkt.</td>
+                <td>-</td>
+                <td>-</td>
+                <td>1</td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>16</td>
+                <td>Ankleshwar</td>
+                <td>2</td>
+                <td>4</td>
+                <td>4</td>
+                <td>1-The VIP Rooms are allotted for the visit of Chairman, Directors, Ministers, Executive Directors, IAS Officers and other VIP dignitaries visiting Ankleshwar Asset with the approval of ED- AM. 2-The VIP Rooms are allotted to E5 and above Officers and dignitaries like authorities, outsiders and Senior Officers of the rank with the approval of HR-BM. 3-The H-R Rooms are allotted to employees and their family members for personal use (includes spouse, children, parents and including their guests at the time of marriage of self or children). Ex-employees & their guests, outsiders.</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>17</td>
+                <td>Chennai</td>
+                <td>-</td>
+                <td>-</td>
+                <td>11</td>
+                <td>- Allotment for VIP/Suite Room Consent from ED-BM (L1) is required. 2- Normal Room: dependent upon the availability rooms shall be allotted.</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>18</td>
+                <td>Karaikal D1, D3 & D4</td>
+                <td>-</td>
+                <td>-</td>
+                <td>-</td>
+                <td>D-1: Ground Floor 1 Room, 1st Floor 2 Rooms is reserved for E8 and above level Officers. D-3: Ground Floor 1 Room, 1st Floor 2 Rooms, Rooms can be allotted to E8 level Officers. D-4: 1st Floor 2 Rooms, Rooms can be allotted to Officers E1 to E4 levels.</td>
+                <td></td>
+            </tr>
+    
+        </div>
+    </div>
+    <script>
+        document.getElementById('bookingForm').addEventListener('submit', async function(event) {
+            event.preventDefault();
+
+            const city = document.getElementById('city').value;
+
+            if (!city) {
+                alert('Please select a city.');
+                return;
+            }
+
+            try {
+                const response = await fetch('http://localhost:3000/submit-booking', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ city })
+                });
+
+                if (response.ok) {
+                    alert('Submitted successfully');
+                    window.location.href = 'confirmation.html';
+                } else {
+                    const errorData = await response.json();
+                    alert(`Failed to submit: ${errorData.message || response.statusText}. Please try again.`);
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                alert('An error occurred while submitting. Please try again.');
+            }
+        });
+    </script>
+</body>
+</html>
